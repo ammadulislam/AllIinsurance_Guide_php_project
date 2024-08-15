@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jornaya BOT</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <style>
+        .form-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h4 id="status" name="status"> Status:  {{status}} </h4>
+
+    <div class="row">
+        <div class="col-12">
+            <p>Please select the website from the dropdown below to display the corresponding form.</p>
+        </div>
+        <div class="col-12">
+            <label for="formtype">Site name: </label>
+            <select id="formtype" class="form-control" name="formtype" required>
+                <option value="" disabled selected>Select Website</option>
+                <option value="F1">F1  => https://allinsuranceguides.com/</option>
+                <option value="F2">F2  => https://eazylegalclaim.com</option>
+                <option value="F3">F3  => https://getaccidentclaims.com/</option>
+                <option value="F4">F4  => https://www.getcompensationnow.com/claim-now/</option>
+                <option value="F5">F5  => https://accidentalclaimservices.com/</option>
+                <option value="F6">F6  => https://insurancequotebucket.com/insurance-services/home-insurance/</option>
+                <option value="F7">F7  => https://victimclaim.com/</option>
+            </select>
+            <div class="invalid-feedback">Please select a website.</div>
+        </div>
+    </div>
+
+    <div id="form-F1" class="form-container">
+        <form method="post" id="form1" onsubmit="return validateForm(event, 'form1')">
+            <input type="hidden" name="formtype" value="F1">
+            <h4>All Insurance Guides</h4>
+            <!-- Add fields specific to F1 -->
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter First Name.</div>
+                    </div>
+                </div>
+    
+                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter Last Name.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="make">Enter Make</label>
+                        <input type="text" id="make" name="make" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter make year.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="model">Enter Modal</label>
+                        <input type="text" id="model" name="model" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter model.</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="year">Enter Year</label>
+                        <input type="text" id="year" name="year" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter year.</div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="row">
+    
+               <div class="col-md-6">
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required class="form-control" value="" maxlength="10" pattern="[0-9]{10}">
+            <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+                <div class="col-md-6">
+                    <div class="form-group">
+                     <label for="address">Address</label>
+                        <input type="Address" id="address" name="address" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter a valid Address.</div>
+                    </div>
+                </div>
+    
+            </div>
+    
+              <div class="row">
+    
+    
+                <div class="col-md-4">
+                    <div class="form-group">
+    
+                                        <label for="state">State</label>
+                                        <select id="state" class="form-control" name="state" required>
+                                            <option value="" disabled="" selected="">Select State</option>
+                                            <option value="Alabama" >Alabama
+                                            </option>
+                                            <option value="Alaska" >Alaska
+                                            </option>
+                                            <option value="Arizona" >Arizona
+                                            </option>
+                                            <option value="Arkansas" >Arkansas
+                                            </option>
+                                            <option value="California" >California
+                                            </option>
+                                            <option value="Colorado" >Colorado
+                                            </option>
+                                            <option value="Connecticut" >
+                                                Connecticut</option>
+                                            <option value="Delaware" >Delaware
+                                            </option>
+                                            <option value="Florida" >Florida
+                                            </option>
+                                            <option value="Georgia" >Georgia
+                                            </option>
+                                            <option value="Hawaii" >Hawaii
+                                            </option>
+                                            <option value="Idaho" >Idaho
+                                            </option>
+                                            <option value="Illinois" >Illinois
+                                            </option>
+                                            <option value="Indiana" >Indiana
+                                            </option>
+                                            <option value="Iowa" >Iowa
+                                            </option>
+                                            <option value="Kansas" >Kansas
+                                            </option>
+                                            <option value="Kentucky" >Kentucky
+                                            </option>
+                                            <option value="Louisiana" >Louisiana
+                                            </option>
+                                            <option value="Maine" >Maine
+                                            </option>
+                                            <option value="Maryland" >Maryland
+                                            </option>
+                                            <option value="Massachusetts" >
+                                                Massachusetts</option>
+                                            <option value="Michigan" >Michigan
+                                            </option>
+                                            <option value="Mississippi" >Minnesota
+                                            </option>
+                                            <option value="Mississippi" >
+                                                Mississippi</option>
+                                            <option value="Missouri" >Missouri
+                                            </option>
+                                            <option value="Montana" >Montana
+                                            </option>
+                                            <option value="Nebraska" >Nebraska
+                                            </option>
+                                            <option value="Nevada" >Nevada
+                                            </option>
+                                            <option value="New Hampshire" >New Hampshire</option>
+                                            <option value="New Jersey" >New Jersey
+                                            </option>
+                                            <option value="New Mexico" >New Mexico
+                                            </option>
+                                            <option value="New York" >New York
+                                            </option>
+                                            <option value="North Carolina" >North Carolina</option>
+                                            <option value="North Dakota" >North Dakota</option>
+                                            <option value="Ohio" >Ohio
+                                            </option>
+                                            <option value="Oklahoma" >Oklahoma
+                                            </option>
+                                            <option value="Oregon" >Oregon
+                                            </option>
+                                            <option value="Pennsylvania" >
+                                                Pennsylvania</option>
+                                            <option value="Rhode Island" >Rhode Island</option>
+                                            <option value="South Carolina" >South Carolina</option>
+                                            <option value="South Dakota" >South Dakota</option>
+                                            <option value="Tennessee" >Tennessee
+                                            </option>
+                                            <option value="Texas" >Texas
+                                            </option>
+                                            <option value="Utah" >Utah
+                                            </option>
+                                            <option value="Vermont" >Vermont
+                                            </option>
+                                            <option value="Virginia" >Virginia
+                                            </option>
+                                            <option value="Washington" >Washington
+                                            </option>
+                                            <option value="West Virginia" >West Virginia</option>
+                                            <option value="Wisconsin" >Wisconsin</option>
+                                            <option value="Wyoming" >Wyoming</option>
+                                        </select>
+                                   </div>
+    
+                </div>
+    
+                 <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        
+                           <input list="cityOptions" id="city" name="city" class="form-control" required>
+                    </div>
+                </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                         <label for="zip_code">Zip Code</label>
+                        <input type="text" id="zip_code" name="zip_code" required class="form-control" maxlength="5" minlength="5">
+                        <div class="invalid-feedback">Please enter a valid zip code.</div>
+                   </div>
+                </div>
+    
+            </div>
+    
+      <div class="row">
+       <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                                        <input type="email" id="email"  name="email" required
+                                            class="form-control" value="">
+                        <div class="invalid-feedback">Please enter a valid Email  .</div>
+                    </div>
+                </div>
+    
+    
+    
+    
+                <div class="col-md-6">
+                    <div class="form-group">
+                     <label for="dob">Date of Birth</label>
+                        <input type="Date" id="dob" name="dob" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter a valid Date of Birth.</div>
+                    </div>
+                </div>
+    
+            </div>
+    
+    
+    
+    
+    
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" onclick="updateStatus()">Submit</button>
+            </div>
+        </form>
+
+
+        </form>
+    </div>
+
+
+
+
+<!-- .................................................................................................................... -->
+
+    <div id="form-F2" class="form-container">
+        <form method="post" id="form2" onsubmit="return validateForm(event, 'form2')">
+            <input type="hidden" name="formtype" value="F2">
+            <h4>Eazy Legal Claim</h4>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="First_Name">First Name</label>
+                        <input type="text" id="First_name" name="first_name" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter First Name.</div>
+                    </div>
+                </div>
+    
+                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter Last Name.</div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="row">
+    
+               <div class="col-md-6">
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required class="form-control" value="" maxlength="10" pattern="[0-9]{10}">
+            <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+        </div>
+    </div>
+    
+  
+                 
+                <div class="col-md-6">
+                    <div class="form-group">
+                     <label for="address">Address</label>
+                        <input type="Address" id="address" name="address" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter a valid Address.</div>
+                    </div>
+                </div>
+    
+            </div>
+    
+              <div class="row">
+    
+                 
+                <div class="col-md-4">
+                    <div class="form-group">
+    
+                                        <label for="state">State</label>
+                                        <select id="state" class="form-control" name="state" required>
+                                            <option value="" disabled="" selected="">Select State</option>
+                                            <option value="Alabama" >Alabama
+                                            </option>
+                                            <option value="Alaska" >Alaska
+                                            </option>
+                                            <option value="Arizona" >Arizona
+                                            </option>
+                                            <option value="Arkansas" >Arkansas
+                                            </option>
+                                            <option value="California" >California
+                                            </option>
+                                            <option value="Colorado" >Colorado
+                                            </option>
+                                            <option value="Connecticut" >
+                                                Connecticut</option>
+                                            <option value="Delaware" >Delaware
+                                            </option>
+                                            <option value="Florida" >Florida
+                                            </option>
+                                            <option value="Georgia" >Georgia
+                                            </option>
+                                            <option value="Hawaii" >Hawaii
+                                            </option>
+                                            <option value="Idaho" >Idaho
+                                            </option>
+                                            <option value="Illinois" >Illinois
+                                            </option>
+                                            <option value="Indiana" >Indiana
+                                            </option>
+                                            <option value="Iowa" >Iowa
+                                            </option>
+                                            <option value="Kansas" >Kansas
+                                            </option>
+                                            <option value="Kentucky" >Kentucky
+                                            </option>
+                                            <option value="Louisiana" >Louisiana
+                                            </option>
+                                            <option value="Maine" >Maine
+                                            </option>
+                                            <option value="Maryland" >Maryland
+                                            </option>
+                                            <option value="Massachusetts" >
+                                                Massachusetts</option>
+                                            <option value="Michigan" >Michigan
+                                            </option>
+                                            <option value="Mississippi" >Minnesota
+                                            </option>
+                                            <option value="Mississippi" >
+                                                Mississippi</option>
+                                            <option value="Missouri" >Missouri
+                                            </option>
+                                            <option value="Montana" >Montana
+                                            </option>
+                                            <option value="Nebraska" >Nebraska
+                                            </option>
+                                            <option value="Nevada" >Nevada
+                                            </option>
+                                            <option value="New Hampshire" >New Hampshire</option>
+                                            <option value="New Jersey" >New Jersey
+                                            </option>
+                                            <option value="New Mexico" >New Mexico
+                                            </option>
+                                            <option value="New York" >New York
+                                            </option>
+                                            <option value="North Carolina" >North Carolina</option>
+                                            <option value="North Dakota" >North Dakota</option>
+                                            <option value="Ohio" >Ohio
+                                            </option>
+                                            <option value="Oklahoma" >Oklahoma
+                                            </option>
+                                            <option value="Oregon" >Oregon
+                                            </option>
+                                            <option value="Pennsylvania" >
+                                                Pennsylvania</option>
+                                            <option value="Rhode Island" >Rhode Island</option>
+                                            <option value="South Carolina" >South Carolina</option>
+                                            <option value="South Dakota" >South Dakota</option>
+                                            <option value="Tennessee" >Tennessee
+                                            </option>
+                                            <option value="Texas" >Texas
+                                            </option>
+                                            <option value="Utah" >Utah
+                                            </option>
+                                            <option value="Vermont" >Vermont
+                                            </option>
+                                            <option value="Virginia" >Virginia
+                                            </option>
+                                            <option value="Washington" >Washington
+                                            </option>
+                                            <option value="West Virginia" >West Virginia</option>
+                                            <option value="Wisconsin" >Wisconsin</option>
+                                            <option value="Wyoming" >Wyoming</option>
+                                        </select>
+                                   </div>
+    
+                </div>
+    
+                 <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        
+    
+                        <!-- Define the datalist with id "cityOptions" -->
+                        <datalist id="cityOptions">
+                            <!-- Populate the options dynamically using JavaScript -->
+                        </datalist>
+                           <input list="cityOptions" id="city" name="city" class="form-control" required>
+                    </div>
+                </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                         <label for="zip_code">Zip Code</label>
+                        <input type="text" id="zip_code" name="zip_code" required class="form-control" maxlength="5" minlength="5">
+                        <div class="invalid-feedback">Please enter a valid zip code.</div>
+                   </div>
+                </div>
+                
+            </div>
+    
+      <div class="row">
+       <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                                        <input type="email" id="email"  name="email" required
+                                            class="form-control" value="">
+                        <div class="invalid-feedback">Please enter a valid Email  .</div>
+                    </div>
+                </div>
+               
+              
+    
+                 
+                <div class="col-md-6">
+                    <div class="form-group">
+                     <label for="dob">Date of Birth</label>
+                        <input type="Date" id="dob" name="dob" required class="form-control" value="">
+                        <div class="invalid-feedback">Please enter a valid Date of Birth.</div>
+                    </div>
+                </div>
+                
+            </div>
+    
+    
+    
+            <div class="row">
+    
+    
+    
+                 <div class="col-md-6">
+            <div class="form-group">
+                <label for="injury_type">Injury Type</label>
+                <select id="injury_type" class="form-control" name="injury_type" required>
+                  <option value="Anxiety">Anxiety</option>
+                        <option value="Back or Neck Pain">Back or Neck Pain</option>
+                        <option value="Brain Injury">Brain Injury</option>
+                        <option value="Broken Bones">Broken Bones</option>
+                        <option value="Cuts and Bruises">Cuts and Bruises</option>
+                        <option value="Headaches">Headaches</option>
+                        <option value="Loss of Life">Loss of Life</option>
+                        <option value="Loss of Lims">Loss of Limb</option>
+                        <option value="Memory Loss">Memory Loss</option>
+                        <option value="Spinal Cord Injury or Paralysis">
+                          Spinal Cord Injury or Paralysis
+                        </option>
+                        <option value="Whiplash">Whiplash</option>
+                        <option value="no injury">no injury</option>
+                </select>
+                <div class="invalid-feedback">Please select an Injury Type.</div>
+            </div>
+        </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="accident_Date">Incident Year</label>
+                           <select id="accident_Date" class="form-control" name="accident_Date" required class="form-control" value="">
+                        <option value="Within 1 Year">Within 1 Year</option>
+                        <option value="Within 2 Year">Within 2 Year</option>
+                        <option value="Within 3 Year">Within 3 Year</option>
+                        <option value="Within 4 Year">Within 4 Year</option>
+                        <option value="Within 5 Year">Within 5 Year</option>
+                        <option value="Within 6 Year">Within 6 Year</option>
+                </select>
+                        <div class="invalid-feedback">Please enter a valid Accident Date .</div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" onclick="updateStatus()">Submit</button>
+            </div>
+        </form>
+
+
+    <!-- Add more form containers as needed for other form types -->
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#formtype').change(function() {
+            var selectedForm = $(this).val();
+            $('.form-container').hide(); // Hide all forms
+            $('#form-' + selectedForm).show(); // Show the selected form
+
+            // Update hidden input value for form type
+            $('input[name="formtype"]').val(selectedForm);
+        });
+
+        $('input[type="tel"]').inputmask('(999) 999-9999'); // Applying phone number mask
+
+        $('form').each(function() {
+    $(this).submit(function(event) {
+        event.preventDefault(); // Prevent default form submission
+        if (this.checkValidity() === true) {
+            $('#status').text('Processing...'); // Update status message to Processing
+
+            // Simulate form submission (replace this with your actual form submission logic)
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                success: function(response) {
+                    $('#status').text('Form Submitted Successfully'); // Update status message to Success
+                },
+                error: function() {
+                    $('#status').text('Form Submission Failed'); // Update status message to Failed
+                }
+            });
+        }
+    });
+});
+
+
+    function validateForm(event, formId) {
+        var form = document.getElementById(formId);
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        } else {
+            $('#status').text('Processing...'); // Update status message to Processing
+            $('button[type="submit"]').attr('disabled', true); // Disable submit button if form is valid
+        }
+
+        form.classList.add('was-validated');
+        return form.checkValidity();
+    }
+</script>
+</body>
+</html>
